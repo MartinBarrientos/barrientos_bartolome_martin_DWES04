@@ -1,0 +1,13 @@
+Para poner en marcha el proyecto:
+
+1. Cuando descargues el repositorio pega la carpeta apiDB que esta dentro de barrientos_bartolome_martin_DWES04 en htdocs.
+
+2. Genera un archivo .htaccess dentro de la carpeta public y pega el siguiente contenido:
+RewriteEngine On
+RewriteBase apiDB/v1/public
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+
+3. Genera la base de datos con el archivo .sql
+4. Importa las consultas a postman
